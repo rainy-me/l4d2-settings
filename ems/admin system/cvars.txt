@@ -1,0 +1,8 @@
+allow_all_bot_survivor_team 1
+sv_client_min_interp_ratio -1
+cl_interp_npcs 0.1
+cl_ragdoll_maxcount 0
+g_ragdoll_fadespeed 9999
+g_ragdoll_lvfadespeed 9999
+r_flashlightmuzzleflash 0
+director_afk_timeout 9999
