@@ -6,3 +6,4 @@ g_ragdoll_fadespeed 9999
 g_ragdoll_lvfadespeed 9999
 r_flashlightmuzzleflash 0
 director_afk_timeout 9999
+tongue_release_fatigue_penalty 0
