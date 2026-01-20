@@ -1,1 +1,1 @@
--insecure -tickrate 100 -language korean -nod3d9ex +clientport 27015 +hostport 27015 +mat_motion_blur_percent_of_screen_max 0 -novid
+-insecure -language korean -nod3d9ex +clientport 27015 +hostport 27015 +mat_motion_blur_percent_of_screen_max 0 -novid
