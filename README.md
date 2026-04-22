@@ -9,20 +9,13 @@ Rainy의 Left 4 Dead 2 설정 모음입니다.
 - 기본 경로: `D:\SteamLibrary\steamapps\common\Left 4 Dead 2\left4dead2\cfg`
 - 경로가 다른 경우 `cfg 복사.cmd` 파일을 메모장으로 열어 경로를 수정하세요.
 
-## 2. ems 적용 방법
-
-`ems 복사.cmd`를 실행하면 자동으로 ems 폴더가 게임 경로로 복사됩니다.
-
-- 기본 경로: `D:\SteamLibrary\steamapps\common\Left 4 Dead 2\left4dead2\ems`
-- 경로가 다른 경우 `ems 복사.cmd` 파일을 메모장으로 열어 경로를 수정하세요.
-
-## 3. 실행 옵션 설정 방법
+## 2. 실행 옵션 설정 방법
 
 Steam 라이브러리에서 Left 4 Dead 2를 우클릭 → 속성 → 일반 → 실행 옵션에 `실행 옵션.txt` 내용을 복붙합니다.
 
 주의: 공방에 접속하려면 `-insecure`를 삭제합니다.
 
-## 4. 한글 채팅 띄어쓰기 문제 해결 방법
+## 3. 한글 채팅 띄어쓰기 문제 해결 방법
 
 `한글채팅 고치기.txt` 파일을 참고하세요.
 
