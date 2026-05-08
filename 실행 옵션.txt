@@ -1,1 +1,1 @@
--insecure -vulkan -maxplayers 31 -tickrate 100 -language korean +clientport 27016 +hostport 27015 +mat_motion_blur_percent_of_screen_max 0 -novid
+-insecure -maxplayers 31 -tickrate 100 -language korean -vulkan +clientport 27016 +hostport 27015 +mat_motion_blur_percent_of_screen_max 0 -novid
