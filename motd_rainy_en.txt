@@ -1,17 +1,21 @@
 - Preserves vanilla gameplay
-- Smooth server environment
+- Finely tuned for smooth performance
 - Added convenience features
-- Prevents unfair situations
-- Fixes numerous bugs
+- Bug fixes & prevents unfair situations
 - Saves wasted time
 
 [ Features ]
-- Mark             → 'Look' vocalizer menu
-- Pass item        → Shove or R key
-- Throw item       → Set a bind, then press the key
-- Check hard mode  → !hardi
-- Current progress → !p
-- Check MVP        → !mvp, !mvpme
+- Mark                  → 'Look' vocalizer menu
+- Pass item             → Shove or R key
+- Throw item            → Set a bind, then press the key
+- Current progress      → !p
+- Check hard mode       → !hardi
+- Check ammo multiplier → !ammi
+- Check MVP             → !mvp, !mvpme
 
+[ Key Bind ]
 Enter the command below in the console to throw items with the G key.
 bind g "setinfo nescmd throwitem; taunt; nescmd 0"
+
+[ Curious about the server host's settings? ]
+lrl.kr/emu6H
