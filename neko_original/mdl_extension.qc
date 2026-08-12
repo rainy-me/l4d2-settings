@@ -1,22 +1,22 @@
-﻿// l4n에 맞춘 몇 가지 qc 명령 예시입니다. 상황에 맞게 유연하게 응용하세요
+﻿// 适配l4n的一些qc命令示例，请灵活变通
 
 $NekoModel "Head" {
     studio "my_head_model.gltf"
     // .......
-    // $Attachment "eyes" 는 안구 중심입니다. 위치가 부적절하면 시선 추적이 부정확해집니다
-    flex "eye_look_up" // gltf 파일 안의 네 방향 셰이프 키 이름에 대응합니다
+    // $Attachment "eyes" 是眼球中心，不合理的位置会导致追踪不准确
+    flex "eye_look_up" // 对应gltf文件里四个方向的形态键名称
     flex "eye_look_down"
     flex "eye_look_左"
     flex "eye_look_right"
-    // 새로 추가하는 flexcontroller는 기존 목록의 맨 아래에 추가해야 합니다. 기존 순서가 깨져 표정 멀티플레이 동기화 문제가 생기는 것을 방지하기 위함입니다
+    // 新增的flexcontroller需要添加到已有的底部，避免破坏原有的排序导致表情联机同步问题
     flexcontroller eyes range -1 1 l4neyes_updown
     flexcontroller eyes range -1 1 l4neyes_rightleft
-    "%eye_look_up" = max(-l4neyes_updown, 0) // flex와 flexcontroller 바인딩
+    "%eye_look_up" = max(-l4neyes_updown, 0) // flex与flexcontroller绑定
     "%eye_look_down" = max(l4neyes_updown, 0)
     "%eye_look_right" = max(-l4neyes_rightleft, 0)
     "%eye_look_左"      = max(l4neyes_rightleft, 0)
 
-    // l4n의 모델 옵션에는 그룹 이름이 l4n인 컨트롤러가 표시됩니다
+    // l4n的模型选项会显示分组名为l4n的控制器
     flex "my_flex1"
     flexcontroller l4n range 0 1 "形态键控制器1"
     "%my_flex1" = "形态键控制器1"
@@ -31,7 +31,7 @@ $Model "Head" "my_head_model.smd" {
     flexfile "my_head_model.vta" {
         defaultflex frame 0
         // .....
-        flex "eye_look_up"      frame 41 // 셰이프 키의 vta 안에서의 위치와 일치시킵니다
+        flex "eye_look_up"      frame 41 // 匹配形态键在vta里的位置
         flex "eye_look_down"    frame 42
         flex "eye_look_left"    frame 43
         flex "eye_look_right"   frame 44
@@ -55,15 +55,15 @@ $Model "Head" "my_head_model.smd" {
     "%my_flex2" = "形态键控制器2"
 }
 
-// 엔진의 한계 때문에 모든 BodyGroup 옵션의 조합 수는 2147483647을 초과할 수 없습니다
-// Model/Body/NekoModel도 BodyGroup에 속합니다
+// 因为引擎的局限，所有BodyGroup选项的排列组合情况不能超过2147483647
+// Model/Body/NekoModel也属于BodyGroup
 
 $BodyGroup "鞋子" {
     studio "高跟鞋.smd"
     blank
 }
 
-// 두 개를 초과하면 ⭐ 접두사를 붙여야 합니다. 정적 표정과의 충돌을 방지하기 위함입니다
+// 超过两个需要带⭐前缀，以防止和静态表情冲突
 $BodyGroup "⭐服装" {
     studio "衣服1.smd"
     studio "衣服2.glb"
@@ -88,8 +88,8 @@ $KeyValues
 
 
 $TextureGroup "材质预设"
-{
-	{ "Body"        "Face"          }
+{ 
+	{ "Body"        "Face"          } 
 	{ "skin1\Body"  "skin1\Face"    }
     { "Body2"       "Face2"         }
     { ..... }
@@ -98,6 +98,6 @@ $TextureGroup "材质预设"
 // 2: Body.vmt -> skin1\Body.vmt    Face.vmt -> skin1\Face.vmt
 // 3: Body.vmt -> Body2.vmt         Face.vmt -> Face2.vmt
 
-// 여러 개의 $TextureGroup을 지원하려면 nekomdl을 사용해야 합니다
+// 需要使用nekomdl才能支持多$TextureGroup
 $TextureGroup "衣服颜色" {...}
 $TextureGroup "头发颜色" {...}

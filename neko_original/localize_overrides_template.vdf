@@ -1,7 +1,7 @@
-// 수정 후 이 파일을 localize_overrides.vdf로 저장해야 합니다
-// 현지화 텍스트 번역 덮어쓰기
+// 修改后需要将本文件保存为localize_overrides.vdf
+// 本地化文本翻译的覆盖
 "localize_overrides" {
-    // 예시 키-값
+    // 示例键值
     "L4D360UI_NamVet"               "Bill_test"
     "L4D360UI_Loading_As_Bill"      "as Bill"
     "L4D360UI_TeenGirl"             "Zoey_test"
@@ -20,5 +20,5 @@
     "L4D360UI_Gambler"              "Nick_test"
     "L4D360UI_Loading_As_Nick"      "as Nick"
 
-    // 더 많은 키-값은 게임 현지화 번역 파일을 직접 언팩하여 얻으세요
+    // 更多键值自行解包游戏本地化翻译获取
 }
