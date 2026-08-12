@@ -83,7 +83,9 @@
             // "HUD가 사용하는 글꼴 이름" "微软雅黑"
 
             // english의 기본 글꼴은 L4D 시리즈의 낡은 스타일에 어울리는 Stubble bold입니다
-            "Stubble bold" "Pretendard"
+            "Stubble bold" "Pretendard Black"
+            "맑은 고딕" "Pretendard Black"
+            "Malgun Gothic" "Pretendard Black"
         }
     }
 
