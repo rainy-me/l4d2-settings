@@ -100,7 +100,7 @@
         // "-lv" "" // 저혈흔 모드. 이름 그대로입니다. 몸에 달라붙는 혈흔 데칼 효과가 생성되지 않습니다(스프레이와 비슷하며, 피 튀김 파티클 효과와 혼동하지 마세요. 데칼은 모드가 적용된 캐릭터 모델에서 크래시를 일으키기 쉽습니다. 예: hunter와 witch의 공격으로 인한 크래시)
 
         // 모델 위에 데칼 생성 금지
-        // +l4n_cvar "r_drawmodeldecals 0"
+        +l4n_cvar "r_drawmodeldecals 0"
 
         // "-condebug" ""       //콘솔의 내용을 left4dead2/console.log로 전부 출력합니다
         // "-conclearlog" ""    //게임 시작 시 console.log의 내용을 지웁니다. 이 시작 옵션은 버그로 적용되지 않는데, l4n 사용 시 이 문제가 수정됩니다
