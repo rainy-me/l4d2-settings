@@ -1,0 +1,23 @@
+// 템플릿 파일입니다. 업데이트 시 사용자 설정이 덮어써지는 것을 방지하기 위해, 처음 사용할 때 이 파일을 scheme_overrides.vdf로 다른 이름 저장해야 합니다
+
+// 수정 후 콘솔에서 l4n_reload_vgui_schemes를 실행하면 VGUI가 핫 리로드됩니다
+
+// vgui 테마 매개변수 덮어쓰기
+"scheme_overrides"
+{
+    // 대상 파일의 경로
+    "resource/ClientScheme.res"
+    {
+        "Fonts" {
+            "TargetID" // 팀원 머리 위 ID의 글꼴 스타일
+            {
+                "1"
+                {
+                    "tall"			"33"    // 글꼴 크기
+                    "weight"		"100"   // 글꼴 굵기
+                }
+            }
+        }
+    }
+
+}
