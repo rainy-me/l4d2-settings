@@ -75,6 +75,34 @@
 
             // english의 기본 글꼴은 L4D 시리즈의 낡은 스타일에 어울리는 Stubble bold입니다
             // "Stubble bold" "微软雅黑" 
+
+            "Fixedsys" "Pretendard Medium"
+            "SimSun" "Pretendard Medium"
+            "NSimSun" "Pretendard Medium"
+            "SimSun-ExtB" "Pretendard Medium"
+            "Batang" "Pretendard Medium"
+            "MingLiU" "Pretendard Medium"
+            "MingLiU-ExtB" "Pretendard Medium"
+            "PMingLiU" "Pretendard Medium"
+            "PMingLiU-ExtB" "Pretendard Medium"
+            "PMingLiU_HKSCS" "Pretendard Medium"
+            "PMingLiU_HKSCS-ExtB" "Pretendard Medium"
+            "MS Mincho" "Pretendard Medium"
+            "MS PMincho" "Pretendard Medium"
+            "Microsoft Sans Serif" "Pretendard Medium"
+            "Arial" "Pretendard Medium"
+            "Arial Black" "Pretendard Medium"
+            "Arial Narrow" "Pretendard Medium"
+            "Arial Unicode MS" "Pretendard Medium"
+            "Lucida Sans Unicode" "Pretendard Medium"
+            "Segoe UI" "Pretendard Medium"
+            "Calibri" "Pretendard Medium"
+            "Courier" "Pretendard Medium"
+            "Tahoma" "Pretendard Medium"
+            "Terminal" "Pretendard Medium"
+            "MS Sans Serif" "Pretendard Medium"
+            "MS Serif" "Pretendard Medium"
+            "Verdana" "Pretendard Medium"
         }
     }
 
