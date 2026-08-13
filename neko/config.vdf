@@ -23,24 +23,7 @@
     // 사용자 지정 명령. l4n_custom_command_menu로 엽니다
     "custom_commands" {
         "1인칭 엔티티 렌더링" { "cvar" "r_drawviewmodel" }
-        "디렉터 시스템 정지" { "cmd" "sv_cheats 1;director_stop" }
-        "HUD 네트워크 상태" {
-            "cvar" "net_graph"
-            "delta" "1"
-            "min" "0"
-            "max" "3"
-        }
-        "치트 활성화(로비 맵 제한 무시)" { "cmd" "l4n_allow_lobby_cheats 1;sv_cheats 1" }
         "총구 흔들림 비활성화" { "cmd" "l4n_cvar z_gun_vertical_punch 0" }
-        "I'm DOWN!!" { "cmd" "l4n_allow_lobby_cheats 1;sv_cheats 1;ent_fire !self sethealth 0" }
-        "엔티티 외곽선" { "cvar" "sv_glowenable" }
-        "엔티티 렌더링" { "cvar" "r_drawentities" }
-        "정적 프롭 렌더링" { "cvar" "r_drawstaticprops" }
-        "데칼 렌더링" { "cvar" "r_drawdecals" }
-        // 흥미로운 convar와 concmd 몇 가지
-        // r_cleardecals
-        // r_decals 2
-        // vm_debug 1
     }
 
     // 게임 설정-키 바인딩의 사용자 지정 항목
