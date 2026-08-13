@@ -24,6 +24,11 @@
     "custom_commands" {
         "1인칭 엔티티 렌더링" { "cvar" "r_drawviewmodel" }
         "총구 흔들림 비활성화" { "cmd" "l4n_cvar z_gun_vertical_punch 0" }
+        "실행 옵션 출력" { "cmd" "l4n_print_launch_options" }
+        "실행 환경 정보 출력" { "cmd" "l4n_env_report" }
+        // 유용한 명령어
+        // l4n_open_shader_cache_dir 
+        // l4n_reload_config 
     }
 
     // 게임 설정-키 바인딩의 사용자 지정 항목
@@ -58,12 +63,12 @@
         //"min_tall" "20" // 글꼴의 최소 크기. 게임 내 일부 텍스트가 너무 작아지는 것을 방지합니다
         "replace" // 글꼴 교체 목록
         {
-            // 작성법: "교체될 글꼴" "대체 글꼴"
+            // 작성법: "교체될 글꼴" "대체 글꼴" 
             // Tahoma를 Microsoft YaHei(微软雅黑)로 교체하는 예시. 중국어 간체의 기본 글꼴은 Tahoma입니다
-            // "Tahoma" "微软雅黑"
+            // "Tahoma" "微软雅黑" 
 
             // 일부 HUD 모드는 기본 글꼴을 다른 것으로 변경합니다. HUD 모드를 언팩하여 사용 중인 글꼴 이름을 확인한 뒤 교체할 수 있습니다
-            // "HUD가 사용하는 글꼴 이름" "微软雅黑"
+            // "HUD가 사용하는 글꼴 이름" "微软雅黑" 
 
             // english의 기본 글꼴은 L4D 시리즈의 낡은 스타일에 어울리는 Stubble bold입니다
             "Stubble bold" "Pretendard Black"
@@ -82,14 +87,14 @@
         -l4n_use_neko_engine_post ""
 
         // 시작 옵션을 추가로 넣는 문법:
-        // "-novid"는 다음과 같이 작성: "-novid" ""
-        // "+mat_phong 1"은 다음과 같이 작성: "+mat_phong" "1"
+        // "-novid"는 다음과 같이 작성: "-novid" "" 
+        // "+mat_phong 1"은 다음과 같이 작성: "+mat_phong" "1" 
         // "-novid" "" // 게임 시작 시 나오는 Valve 애니메이션과 맛있는 초콜릿 헬리콥터를 끕니다
 
         // "-lv" "" // 저혈흔 모드. 이름 그대로입니다. 몸에 달라붙는 혈흔 데칼 효과가 생성되지 않습니다(스프레이와 비슷하며, 피 튀김 파티클 효과와 혼동하지 마세요. 데칼은 모드가 적용된 캐릭터 모델에서 크래시를 일으키기 쉽습니다. 예: hunter와 witch의 공격으로 인한 크래시)
 
         // 모델 위에 데칼 생성 금지
-        // +l4n_cvar "r_drawmodeldecals 0"
+        // +l4n_cvar "r_drawmodeldecals 0" 
 
         // "-condebug" ""       //콘솔의 내용을 left4dead2/console.log로 전부 출력합니다
         // "-conclearlog" ""    //게임 시작 시 console.log의 내용을 지웁니다. 이 시작 옵션은 버그로 적용되지 않는데, l4n 사용 시 이 문제가 수정됩니다
@@ -97,9 +102,9 @@
         // 아래는 l4n 관련 시작 옵션입니다
             // "-hide_addons" ""            // 엔진이 addons 디렉터리의 파일을 읽는 것을 금지합니다
             // -l4n_use_neko_engine_post "" // 추가하면 l4n이 엔진의 후처리 렌더링을 대신 처리합니다
-            // "-no_l4n_gui" ""
-            // "-no_l4n_vgui" ""
-            // "-mat_utf8" ""
+            // "-no_l4n_gui" "" 
+            // "-no_l4n_vgui" "" 
+            // "-mat_utf8" "" 
 
             // 아래 시작 옵션은 config.vdf 파일에 추가할 수 없습니다. steam 게임 속성이나 다른 방식(bat, 바로가기)으로 설정하세요
             // -hide_neko                   // l4n 비활성화. 플랫폼이 성공적으로 비활성화되면 이 설정 파일은 무효가 됩니다
