@@ -23,10 +23,9 @@
     // 사용자 지정 명령. l4n_custom_command_menu로 엽니다
     "custom_commands" {
         "1인칭 엔티티 렌더링" { "cvar" "r_drawviewmodel" }
-        "총구 흔들림 비활성화" { "cmd" "l4n_cvar z_gun_vertical_punch 0" }
-        "실행 옵션 출력" { "cmd" "l4n_print_launch_options" }
-        "실행 환경 정보 출력" { "cmd" "l4n_env_report" }
         // 유용한 명령어
+        // l4n_print_launch_options 
+        // l4n_env_report 
         // l4n_open_shader_cache_dir 
         // l4n_reload_config 
     }
