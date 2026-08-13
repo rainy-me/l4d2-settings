@@ -1,4 +1,4 @@
-//服务器名黑名单，正则表达式，修改后需要保存为server_name_filter.txt
+//서버 이름 블랙리스트, 정규표현식 사용, 수정 후 server_name_filter.txt로 저장해야 함
 .*RPG.*
 .*戮.*
 .*弑.*
