@@ -23,9 +23,13 @@
     // 사용자 지정 명령. l4n_custom_command_menu로 엽니다
     "custom_commands" {
         "1인칭 엔티티 렌더링" { "cvar" "r_drawviewmodel" }
+        "엔티티 외곽선" { "cvar" "sv_glowenable" }
+        "엔티티 렌더링" { "cvar" "r_drawentities" }
+        "정적 프롭 렌더링" { "cvar" "r_drawstaticprops" }
+        "데칼 렌더링" { "cvar" "r_drawdecals" }
+        "플레이어 광원 설정" { "cvar" "l4n_survivor_stylized_amibentlight" }
         // 유용한 명령어
         // l4n_print_launch_options 
-        // l4n_env_report 
         // l4n_open_shader_cache_dir 
         // l4n_reload_config 
     }
@@ -70,9 +74,7 @@
             // "HUD가 사용하는 글꼴 이름" "微软雅黑" 
 
             // english의 기본 글꼴은 L4D 시리즈의 낡은 스타일에 어울리는 Stubble bold입니다
-            "Stubble bold" "Pretendard Black"
-            "맑은 고딕" "Pretendard Black"
-            "Malgun Gothic" "Pretendard Black"
+            // "Stubble bold" "微软雅黑" 
         }
     }
 
@@ -81,8 +83,6 @@
     // !!! -hide_neko 시작 옵션은 여기에 추가해도 적용되지 않습니다
     "launch_options"
     {
-        +l4n_cvar "z_gun_vertical_punch 0"
-        +l4n_cvar "r_drawmodeldecals 0"
         -l4n_use_neko_engine_post ""
 
         // 시작 옵션을 추가로 넣는 문법:
