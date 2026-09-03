@@ -39,6 +39,8 @@ while (-not $game) {
 
 $dst = Join-Path $game 'left4dead2'
 Write-Host "게임 경로: $game" -ForegroundColor Green
+Remove-Item (Join-Path $dst 'ems'), (Join-Path $dst 'downloads') -Recurse -Force -ErrorAction SilentlyContinue
+Write-Host 'ems, downloads 폴더 삭제' -ForegroundColor Green
 Copy-Item cfg, neko -Destination $dst -Recurse -Force
 Copy-Item motd.txt -Destination $dst -Force
 Write-Host '설정 적용 완료' -ForegroundColor Green
