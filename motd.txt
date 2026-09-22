@@ -10,7 +10,7 @@
 - 자살           → !kill
 - 현재 진행도    → !p
 - 길 안내        → !ptg
-- 하드모드 확인  → !hardi
+- 하드모드 확인  → !hard
 - 탄약 배수 확인 → !ammi
 - MVP 확인       → !mvp, !mvpme
 
