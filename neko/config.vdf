@@ -10,6 +10,41 @@
     // 자신이 무엇을 하는지 확실히 알지 못한다면 일부 구간을 잘라내거나 삭제하지 마세요
     // config.vdf의 형식은 autoexec.cfg와 다릅니다. config_template.vdf의 형식에 맞춰 수정하세요
 
+    // VPK Overlay는 맵을 로드할 때마다 후보 라이브러리에서 서로 다른 VPK 모드를 무작위, 순서대로 또는 지정하여 자동으로 마운트합니다. 게임 재시작이 필요 없습니다
+    // 예: 맵이 바뀔 때마다 다른 스킨의 총으로 자동 교체, 또는 다른 생존자 모델로 전환
+    // 폴더를 하나 준비하고, 그 폴더의 경로를 아래 매개변수에 입력하세요 (사용하려면 아래 줄 앞의 "//"를 삭제하고 경로를 수정)
+    // "vpk_overlay" "E:\aaa\bbb\vpk_overlay_root"
+    // vpk_overlay_root/                   <-- 루트 디렉터리
+    // ├── Weapons_AK47/                   <-- Overlay 단위 (이름과 개수에 제한 없음. 여기서는 AK47 모드의 교체 라이브러리로 준비)
+    // │   ├── Red_Skin.vpk                <-- 후보 1: 단일 VPK 파일
+    // │   ├── Blue_Skin.vpk               <-- 후보 2: 단일 VPK 파일
+    // │   ├── Multi_Parts_Pack/           <-- 후보 3: 다중 파일 조합 팩 (폴더)
+    // │   │   ├── model.vpk
+    // │   │   └── sound.vpk
+    // │   └── _disabled/                  <-- 【밑줄 무시】: _ 로 시작하는 폴더는 자동으로 무시됩니다
+    // │       ├── Old_Skin.vpk            <-- 안의 파일은 마운트되지 않습니다
+    // │       └── Test.vpk
+    // └── Survivors_Rochelle/
+    //     ├── Outfit_A.vpk
+    //     └── _temp.vpk                   <-- 【밑줄 무시】: _ 로 시작하는 파일도 무시됩니다
+    //
+    // overlay_root 아래의 각 하위 폴더는 하나의 교체 항목에 해당합니다.
+    // 여러 .vpk가 들어 있는 폴더가 선택되면 그 폴더 안의 모든 VPK가 동시에 로드됩니다.
+    // 밑줄 "_"로 시작하는 파일이나 폴더는 스캔 시 바로 건너뛰며 후보 라이브러리에 포함되지 않습니다.
+    //
+    // 주의: 이 기능은 현재 파일 충돌 검사가 없습니다. 발생할 수 있는 충돌 문제에 대응하려면 기본적인 모드 파일 점검 능력이 필요합니다
+    //      라이브러리에 넣는 VPK 파일은 명확한 단일 기능을 갖도록 하여 다른 모드와 충돌할 가능성을 줄이세요
+    //      위 내용이 무슨 말인지 모르겠다면 무기 모드만 사용하는 것을 권장합니다
+    //
+    // 라이브러리 파일을 준비한 뒤 맵에 들어가서 l4n의 hud 메뉴를 열어 이 기능에 접근하세요
+    // 각 Overlay 단위는 다음 전환 규칙을 독립적으로 설정할 수 있습니다:
+    //      무작위 비반복(RandomNoRepeat): 무작위로 선택하되, 이번에 선택된 내용이 이전과 겹치지 않도록 보장합니다.
+    //      완전 무작위(Random): 매번 순수하게 무작위로 VPK 하나 또는 조합 팩 하나를 선택합니다.
+    //      순서 모드(Sequential): 이름의 알파벳 순서대로 차례로 순환하며 로드합니다.
+    //      고정 모드(Lock): 현재 선택된 모드를 고정하고, 맵 변경이나 재로드 시 더 이상 전환하지 않습니다.
+    // 다음 사용 지정(Designate Next):
+    //      특정 VPK 파일이나 폴더가 다음 맵 변경 시 반드시 적용되도록 미리 지정할 수 있습니다. 해당 마운트가 완료되면 시스템이 원래의 전환 규칙으로 자동 복귀합니다.
+
     // 환경 변수 설정
     "environment_variables" {
         // vulkan loader의 환경 변수
@@ -24,6 +59,16 @@
     // 사용자 지정 명령. l4n_custom_command_menu로 엽니다
     "custom_commands" {
         "1인칭 엔티티 렌더링" { "cvar" "r_drawviewmodel" }
+        "디렉터 시스템 정지" { "cmd" "sv_cheats 1;director_stop" }
+        "HUD 네트워크 상태" {
+            "cvar" "net_graph"
+            "delta" "1"
+            "min" "0"
+            "max" "3"
+        }
+        "치트 활성화(로비 맵 제한 무시)" { "cmd" "l4n_allow_lobby_cheats 1;sv_cheats 1" }
+        "총구 흔들림 비활성화" { "cmd" "l4n_cvar z_gun_vertical_punch 0" }
+        "자살(체력 0)" { "cmd" "l4n_allow_lobby_cheats 1;sv_cheats 1;ent_fire !self sethealth 0" }
         "엔티티 외곽선" { "cvar" "sv_glowenable" }
         "엔티티 렌더링" { "cvar" "r_drawentities" }
         "정적 프롭 렌더링" { "cvar" "r_drawstaticprops" }
@@ -108,7 +153,7 @@
         // "-novid"는 다음과 같이 작성: "-novid" "" 
         // "+mat_phong 1"은 다음과 같이 작성: "+mat_phong" "1" 
 
-        -l4n_use_neko_engine_post ""
+        "-l4n_use_neko_engine_post" ""
 
         // "-novid" "" // 게임 시작 시 나오는 Valve 애니메이션과 맛있는 초콜릿 헬리콥터를 끕니다
 
@@ -131,6 +176,7 @@
             // -hide_neko                   // l4n 비활성화. 플랫폼이 비활성화되면 이 설정 파일은 무효가 되며, 시작 옵션을 옮겨야 할 수 있습니다
             // -hide_nekoshaders            // l4n의 셰이더 비활성화
             // -l4n_no_compatibility_check  // l4n의 게임 버전 검사 금지
+            // -l4n_no_crash_handler        // L4N의 크래시 핸들러 비활성화 (config.vdf에서는 무효)
     }
 
     // l4n_menu를 "\" 키에 강제로 바인딩할지 여부
@@ -139,10 +185,13 @@
     // datacache의 상한을 2048MB로 강제 설정
     "lock_datacache_size" "1"
 
+    "logging_system_log" "1"    // 게임의 모든 채널 로그를 logging_system.log에 기록합니다
+
 // ==================== 자신이 무엇을 하는지 확실히 알지 못한다면, 이 줄부터 파일 끝까지의 내용을 수정하지 마세요 ========================
 
     // 엔진 tier0 내장 메모리 할당자를 mimalloc 메모리 할당자로 교체할지 여부. 일부 상황에서 메모리 단편화를 줄여줍니다
     // 이 기능은 실험적이며, 게임의 메모리 수요 할당을 위해 큰 메모리 블록을 미리 확보합니다
+    // mimalloc은 높은 주소부터 메모리를 할당하는 경향이 있어 게임 객체의 메모리 배치가 크게 바뀌며, 평소에는 잘 드러나지 않는 버그가 노출될 수 있습니다
     // 평소 DC 점유가 높은 편이라면 이 기능 사용을 권장하지 않습니다. 이 기능은 현재 dxvk의 메모리 할당자를 교체하지 않기 때문에 메모리 부족 크래시가 발생하기 쉽습니다
     "mimalloc" "0"
 
