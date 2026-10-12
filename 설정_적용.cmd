@@ -3,7 +3,6 @@ rem cmd/PowerShell hybrid. Keep UTF-8 without BOM; keep this batch part ASCII on
 chcp 65001 >nul
 set "L4D2CMD=%~f0"
 powershell -NoProfile -ExecutionPolicy Bypass -Command "$s=[IO.File]::ReadAllText($env:L4D2CMD,[Text.Encoding]::UTF8); Invoke-Expression $s.Substring($s.LastIndexOf('#:PSBEGIN'))"
-pause
 exit /b
 
 #:PSBEGIN
