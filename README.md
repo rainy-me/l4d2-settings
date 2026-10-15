@@ -19,5 +19,6 @@ Steam 라이브러리에서 Left 4 Dead 2를 우클릭 → 속성 → 일반 →
 
 ## Rainy's 리포지토리
 
+- [l4d2-server](https://github.com/rainy-me/l4d2-server): Left 4 Dead 2 데디케이티드 서버 구성 모음
 - [l4d2-settings](https://github.com/rainy-me/l4d2-settings): Left 4 Dead 2 설정 모음
 - [l4d2-sourcemod](https://github.com/rainy-me/l4d2-sourcemod): Left 4 Dead 2 SourceMod 구성 모음
